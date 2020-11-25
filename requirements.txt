@@ -1,0 +1,13 @@
+SPA
+Vanilla JS
+Webpack (exports/imports)
+    Babel
+    SCSS
+    ESLint
+    2 Modes
+        - DEV
+            Dev server, Source Maps, ESLint
+        - PROD
+            Minified
+
+Git
