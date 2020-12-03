@@ -1,4 +1,3 @@
-import './module';
-import './scss/style.scss';
+import './scss/style.scss'
 
-console.log('Index.js');
+console.log('Index.js')
