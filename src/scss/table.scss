@@ -1,0 +1,102 @@
+@import 'variables';
+@import 'mixins';
+
+.excel__table {
+    // debug:
+    // background-color: #cde;
+
+    overflow-x: auto;
+    padding-bottom: 1px;
+
+    .row {
+
+        display: flex;
+
+        min-height: 20px;
+        height: $row-height;
+
+        + .row {
+            .row-info {
+                border-bottom: 1px solid $border-color;
+            }
+        }
+
+        &.-heading {
+            border-bottom: 1px solid $border-color;
+        }
+
+        &:last-child {
+            .row-info {
+                border-bottom: none;
+            }
+
+            .cell {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .column,
+    .row-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #f8f9fa;
+    }
+
+    .row-info {
+        min-width: $info-cell-width;
+        height: 100%;
+
+        + .row-data {
+            border-left: 1px solid $border-color;
+        }
+    }
+
+    .row-data {
+        display: flex;
+    }
+
+    .cell,
+    .column {
+        min-width: $info-cell-width;
+        width: $cell-width;
+        height: 100%;
+    }
+
+    .column {
+        &:last-child {
+            border-right: 1px solid $border-color;
+        }
+
+        + .column {
+            border-left: 1px solid $border-color;
+        }
+    }
+
+    .cell {
+        padding: 6px;
+
+        color: #111;
+        white-space: nowrap;
+
+        border-bottom: 1px solid #e2e3e3;
+        outline: none;
+
+        + .cell {
+            border-left: 1px solid #e2e3e3;
+        }
+
+        &:last-child {
+            border-right: 1px solid #e2e3e3;
+        }
+
+        &.-selected {
+            z-index: 2;
+
+            border: none;
+            outline: 2px solid #1a73e8;
+        }
+    }
+}
